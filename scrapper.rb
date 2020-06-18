@@ -4,6 +4,9 @@ require 'httparty'
 require 'byebug'
 require 'pry'
 
+############# this efor including custom classes and modules
+
+
 class Scraper < Helperclass
 
         attr_reader :url, :make, :model
