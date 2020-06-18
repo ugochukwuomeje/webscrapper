@@ -29,6 +29,8 @@ class Scraper < Helperclass
 
              #create a method that links for other pages
              all_other = build_full_cars(total_pages)
+
+             first_page + all_other.flatten
             
         end 
 
@@ -45,6 +47,20 @@ class Scraper < Helperclass
             }
         end 
 
+        def get_all_page_urls(array_of_ints)
+            array_of_ints.map { |number| 
+             @url + "/pagenum=#{number}" }
+        end 
+
+        def get_number_of_pages(listings, cars_per_page)
+            a = listings % cars_per_page
+            if a == 0
+               listings / cars_per_page
+            else 
+               listings / cars_per_page + 1
+            end 
+        end 
+
         def build_full_cars(number_of_pages)
             a = [*2..number_of_pages]
             all_page_urls = get_all_page_urls(a)
@@ -55,12 +71,5 @@ class Scraper < Helperclass
             create_car_hash(cars) }
         end
 
-        def get_number_of_pages(listings, cars_per_page)
-            a = listings % cars_per_page
-            if a == 0
-               listings / cars_per_page
-            else 
-               listings / cars_per_page + 1
-            end 
-        end 
+        
 end
