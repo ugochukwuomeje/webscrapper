@@ -1,13 +1,13 @@
 require 'nokogiri'
-require 'rest-client'
 require 'httparty'
 require 'byebug'
 require 'pry'
 
 ############# this efor including custom classes and modules
+require_relative 'helperclass/helperclass'
+require_relative 'modulemethods/getallurl'
 
-
-class Scraper < Helperclass
+class Scrapper < Helperclass
 
         attr_reader :url, :make, :model
 
@@ -16,6 +16,8 @@ class Scraper < Helperclass
             @model = model.capitalize
             @url = "https://www.dupontregistry.com/autos/results/#{make}/#{model}/for-sale".sub(" ", "--")
         end 
+
+        include GetAllurl
 
         def scrape 
             parsed_page = parse_url(@url)
@@ -67,3 +69,6 @@ class Scraper < Helperclass
 
         
 end
+
+sc = Scrapper.new("bentley", "continental gt")
+sc.scrape
