@@ -22,8 +22,11 @@ class Scrapper < Helperclass
         def scrape 
             parsed_page = parse_url(@url)
            
-             cars = parsed_page.css('div.searchResults') #Nokogiri object containing all cars on a given page
+             cars_perpage = parsed_page.css('div.searchResults') #Nokogiri object containing all cars on a given page
            
+             total_listings = parsed_page.css('#mainContentPlaceholder_vehicleCountWithin').text.to_i #get the total number of page
+             total_pages = self.get_number_of_pages(total_listings, cars_perpage)
+
              first_page = create_car_hash(cars)
 
              #create a method that links for other pages
