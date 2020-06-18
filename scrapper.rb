@@ -14,12 +14,6 @@ class Scraper < Helperclass
             @url = "https://www.dupontregistry.com/autos/results/#{make}/#{model}/for-sale".sub(" ", "--")
         end 
 
-        #this method get the raw html and parse the raw html with nokogiri to convert the html to ruby objects
-        def parse_url(url)
-            unparsed_page = HTTParty.get(url)
-            Nokogiri::HTML(unparsed_page)
-        end 
-
         def scrape 
             parsed_page = parse_url(@url)
            
