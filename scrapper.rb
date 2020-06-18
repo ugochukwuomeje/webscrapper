@@ -25,6 +25,10 @@ class Scraper < Helperclass
            
              cars = parsed_page.css('div.searchResults') #Nokogiri object containing all cars on a given page
            
+             first_page = create_car_hash(cars)
+
+             #create a method that links for other pages
+             all_other = build_full_cars(total_pages)
             
         end 
 
@@ -40,4 +44,14 @@ class Scraper < Helperclass
                 link: "https://www.dupontregistry.com/#{car.css('a').attr('href').value}" }
             }
         end 
+
+        def build_full_cars(number_of_pages)
+            a = [*2..number_of_pages]
+            all_page_urls = get_all_page_urls(a)
+           
+            all_page_urls.map { |url| 
+            pu = parse_url(url)
+            cars = pu.css('div.searchResults')
+            create_car_hash(cars) }
+        end
 end
