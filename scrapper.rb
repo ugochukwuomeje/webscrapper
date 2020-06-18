@@ -54,4 +54,13 @@ class Scraper < Helperclass
             cars = pu.css('div.searchResults')
             create_car_hash(cars) }
         end
+
+        def get_number_of_pages(listings, cars_per_page)
+            a = listings % cars_per_page
+            if a == 0
+               listings / cars_per_page
+            else 
+               listings / cars_per_page + 1
+            end 
+        end 
 end
