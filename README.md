@@ -5,7 +5,7 @@ Microverse's Ruby capstone Project: Bubble Sort
 https://www.dupontregistry.com. 
 
 ## How It works
-The project is started by runing ruby index.rb on the command line. The project requires two inputs from the you user to work, the name of the car and the model. When you run the program, it will first request for the car name, enter bentley and press enter. The it will request for car model, enter continental gt and press enter. The program will query the https://www.dupontregistry.com and retrieves the information for all the bently with continental gt from the site. The information retrieved are car name, price, year, model and link and displays them as an array of maps.
+The project is started by runing ruby index.rb on the command line. The project requires two inputs from the you user to work, the name of the car and the model. When you run the program, it will first request for the car name, enter bentley and press enter. Then it will request for car model, enter continental gt and press enter. The program will query the https://www.dupontregistry.com and retrieves the information for all the bently with model continental gt from the site. The information retrieved are car name, price, year, model and link and displays them as an array of maps.
 
 Additional description about the project and its features.
 
