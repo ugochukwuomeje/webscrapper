@@ -3,9 +3,9 @@ require 'httparty'
 require 'byebug'
 require 'pry'
 
-############# this efor including custom classes and modules
-require_relative 'helperclass/helperclass'
-require_relative 'modulemethods/getallurl'
+############# this is for including custom classes and modules
+require_relative 'lib/helperclass' ###this is a helper class
+require_relative 'lib/getallurl' #this is a module
 
 class Scrapper < Helperclass
   attr_reader :url, :make, :model
