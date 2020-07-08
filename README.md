@@ -19,7 +19,7 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
+This is how to set up the Environment Locally
 
 ## Prerequisites
 
@@ -35,11 +35,11 @@ gem
 ## Installation
 
 1 Clone the repo
-git clone git@github.com:ugochukwuomeje/webscrapper.git
+ - git clone git@github.com:ugochukwuomeje/webscrapper.git
 
 2 Install gem packages
 
-3 gem install
+  - gem install
 
 4 Run main.rb file
 
