@@ -11,12 +11,41 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Ruby,
-- VSCode.
+- Ruby
+- Nokogiri
+- Open-uri
+- Coloize
 
-## Setup
 
-- To run this project use the terminal and the command $ruby #{index.rb}
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
+
+## Prerequisites
+
+These are the tools you need to use the software and how to install them.
+
+- ruby
+https://www.ruby-lang.org/en/downloads/
+
+gem
+- gem install nokogiri
+- gem install colorize
+
+## Installation
+
+1 Clone the repo
+git clone git@github.com:ugochukwuomeje/webscrapper.git
+
+2 Install gem packages
+
+3 gem install
+
+4 Run main.rb file
+
+5 ruby bin/main.rb
+
+- To run this project use the terminal and the command $ruby bin/main.rb
 
 ## Authors
 

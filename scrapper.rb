@@ -1,11 +1,11 @@
 require 'nokogiri'
-require 'httparty'
 require 'byebug'
 require 'pry'
+require 'colorize'
 
 ############# this is for including custom classes and modules
-require_relative 'lib/helperclass' ###this is a helper class
-require_relative 'lib/getallurl' #this is a module
+require_relative 'lib/helperclass' # ##this is a helper class
+require_relative 'modules/getallurl' # this is a module
 
 class Scrapper < Helperclass
   attr_reader :url, :make, :model
