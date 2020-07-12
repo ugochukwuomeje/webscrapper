@@ -20,7 +20,7 @@ describe Scrapper do
   describe '#scrape' do
     it "this method gets the number of cars with model  name 'bentley' and model 'continental gt' " do
       allcars = Scrapper.new('bentley', 'contnental gt')
-      expect(allcars.scrape.length).to be >= (0)
+      expect(allcars.scrape.length).to be >= 0
     end
   end
 end
