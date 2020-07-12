@@ -15,8 +15,16 @@ puts '+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-
 +  from www.dupontregistry.com and displays them on the console                                   +
 +                                                                                                 +
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+'.yellow
+carname = ''
+carmaodel = ''
+while carname == '' && carmaodel == ''
+  puts 'Enter the the car name eg bentley'
+  carname = gets.chomp
 
-carscrapper = Scrapper.new('bentley', 'continental gt')
+  puts 'Enter the the car model eg continental gt'
+  carmodel = gets.chomp
+end
+carscrapper = Scrapper.new(carname.to_s, carmodel.to_s)
 all_car_info = carscrapper.scrape
 
 puts '-----------------------------------------------------------------------------------------------------------'.red
