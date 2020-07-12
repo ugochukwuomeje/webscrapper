@@ -1,4 +1,4 @@
-require './../scrapper'
+require './../lib/scrapper'
 require 'byebug'
 require 'colorize'
 
@@ -20,7 +20,7 @@ carscrapper = Scrapper.new('bentley', 'continental gt')
 all_car_info = carscrapper.scrape
 
 puts '-----------------------------------------------------------------------------------------------------------'.red
-puts '    Name  |   Model   |  Price  | year | Link                                                              '.red
+puts '    Name  |   Model       |  Price  | year | Link                                                              '.red
 puts '-----------------------------------------------------------------------------------------------------------'.red
 
 all_car_info.each do |car|
