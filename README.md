@@ -39,7 +39,7 @@ gem
 
 2 Install gem packages
 
-  - gem install
+  - bundle install
 
 4 Run main.rb file
 
