@@ -37,6 +37,16 @@ class Scrapper < Helperclass
     first_page + all_other.flatten
   end
 
+  def get_number_of_pages(listings, cars_per_page)
+    a = listings % cars_per_page
+
+    if a.zero?
+      listings / cars_per_page
+    else
+      listings / cars_per_page + 1
+    end
+  end
+
   private
 
   # this create the car hash object from the parsed object
@@ -49,16 +59,6 @@ class Scrapper < Helperclass
         model: @model,
         price: doc, # .text.sub(",","").to_i,
         link: "https://www.dupontregistry.com/#{car.css('a').attr('href').value}" }
-    end
-  end
-
-  def get_number_of_pages(listings, cars_per_page)
-    a = listings % cars_per_page
-
-    if a.zero?
-      listings / cars_per_page
-    else
-      listings / cars_per_page + 1
     end
   end
 

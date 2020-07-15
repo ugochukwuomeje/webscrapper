@@ -2,7 +2,7 @@ require_relative '../lib/scrapper.rb'
 
 describe Scrapper do
   describe '#get_number_of_pages' do
-    it 'it gets the number of pages that has bently continental' do
+    it 'it gets the number of pages that has bently continental gt' do
       scrape = Scrapper.new('bentley', 'continental gt')
       expect(scrape.get_number_of_pages(100, 6)).to equal(17)
     end

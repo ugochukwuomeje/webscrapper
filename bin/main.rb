@@ -1,5 +1,4 @@
-require './../lib/scrapper'
-require 'byebug'
+require_relative '../lib/scrapper'
 require 'colorize'
 
 # This is web scrapping program the scrapes www.dupontregistry.com for the following information.
