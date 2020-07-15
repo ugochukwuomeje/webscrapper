@@ -23,6 +23,8 @@ while carname == '' && carmaodel == ''
 
   puts 'Enter the the car model eg continental gt'
   carmodel = gets.chomp
+
+  puts 'Please Wait while result is being fetched...'
 end
 carscrapper = Scrapper.new(carname.to_s, carmodel.to_s)
 all_car_info = carscrapper.scrape
