@@ -25,6 +25,9 @@ while carname == '' && carmaodel == ''
 
   puts 'Please Wait while result is being fetched...'
 end
+
+# This block loops through the hash and displays the information received from site and displays it on the console
+# in tabular form
 carscrapper = Scrapper.new(carname.to_s, carmodel.to_s)
 all_car_info = carscrapper.scrape
 

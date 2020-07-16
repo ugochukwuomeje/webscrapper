@@ -18,10 +18,12 @@ class Scrapper < Helperclass
 
   include GetAllurl
 
+  # this block parse the raw site as an object to the parsed page variable
+  # cars.count returns the number of cars on the page
   def scrape
     parsed_page = parse_url(@url)
 
-    cars = parsed_page.css('div.searchResults') # Nokogiri object containing all cars on a given page
+    cars = parsed_page.css('div.searchResults')
 
     cars_perpage = cars.count
 
@@ -37,6 +39,7 @@ class Scrapper < Helperclass
     first_page + all_other.flatten
   end
 
+  # this function gets the number of pages that contains information about bentley continental gt
   def get_number_of_pages(listings, cars_per_page)
     a = listings % cars_per_page
 
@@ -49,7 +52,7 @@ class Scrapper < Helperclass
 
   private
 
-  # this create the car hash object from the parsed object
+  # this function puts the bentley continental information into hash data structure from the parsed object
   def create_car_hash(car_obj)
     car_obj.map do |car|
       doc = car.css('span')[2].text
@@ -57,11 +60,12 @@ class Scrapper < Helperclass
       { year: car.css('a').children[0].text[0..4].strip.to_i,
         name: @make,
         model: @model,
-        price: doc, # .text.sub(",","").to_i,
+        price: doc,
         link: "https://www.dupontregistry.com/#{car.css('a').attr('href').value}" }
     end
   end
 
+  # this fuction convert all the cars in all the pages into a data structure
   def build_full_cars(number_of_pages)
     a = [*2..number_of_pages]
     all_page_urls = get_all_page_urls(a)
